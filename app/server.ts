@@ -1,6 +1,7 @@
 /* app/server.ts */
 
 // Import everything from express and assign it to the express variable
+const dotenv = require('dotenv');
 const express = require("express");
 import { Request, Response } from "express";
 import passport from "passport";
@@ -14,6 +15,8 @@ import { LoginController } from "./controllers";
 const app = express();
 const b = new bdata();
 const port: number = 3000;
+dotenv.config();
+
 
 app.use(passport.initialize());
 app.use(passport.session());
